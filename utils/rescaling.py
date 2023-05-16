@@ -1,6 +1,7 @@
 import os
 import numpy as np
 from scipy.interpolate import interpolate
+pip install xesmf
 import xarray as xr
 import xesmf as xe
 #, ofile, ingrid, outgrid

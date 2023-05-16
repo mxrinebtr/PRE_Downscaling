@@ -7,7 +7,6 @@ from matplotlib import pyplot as plt
 def getfiles() :
     """
 Creates a list with all the file names.
-
 Returns:
 filenames: A list containing all the file names.
 """
