@@ -6,27 +6,23 @@ from matplotlib import pyplot as plt
 
 def getfiles() :
     """
-    Creates a list with all the file names.
+Creates a list with all the file names.
 
-    Returns:
-        filenames: A list conatining all the file names.
-    """
-  
+Returns:
+filenames: A list containing all the file names.
+"""
     filenames  = glob.glob("lffd*")
     filenames = sorted(filenames)
     return filenames
 
 def summer_ds(fnames) :
     """
-    Creates a new dataset containing all the values during the summer.
-  
-    Parameters:
-        fnames: list with the names of each files.
-          
-    Returns:
-        summer_dataset: netCDF dataset containing all the summer values.
-    """
-  
+Creates a new dataset containing all the values during the summer.
+Parameters:
+fnames: list with the names of each files.
+returns:
+summer_dataset: netCDF dataset containing all the summer values.
+"""
     summer = [xr.open_dataset(file) for file in fnames[172*24:265*24]]
     sorted_summer = [xr.merge([file.T_2M, file.RELHUM_2M, file.TOT_PR]) for file in summer]
     summer_dataset = xr.concat(sorted_summer, dim='time')

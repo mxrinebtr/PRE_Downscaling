@@ -11,14 +11,12 @@ import seaborn as sns
 
 def RMSE(ds1, ds2) :
     """
-    Returns the RMSE on each dimensions for two datasets.
-  
-    Parameters:
-        ds1, ds2: netCDF datasets the same dimension.
-          
-    Returns:
-        ds: dataset containing the RMSE for each dimension.
-    """
+Returns the RMSE on each dimensions for two datasets.
+Parameters:
+ds1, ds2: netCDF datasets the same dimension.
+Returns:
+ds: dataset containing the RMSE for each dimension.
+"""
     
     ds = xs.rmse(ds1, ds2, dim = ['rlon','rlat'])
     return ds
